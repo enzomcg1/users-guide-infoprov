@@ -179,6 +179,29 @@ body {
   transition: all 0.3s ease;
 }
 
+/* Mobile navigation adjustments */
+@media (max-width: 768px) {
+  .nav-fixed {
+    z-index: 40;
+    padding: 8px 0;
+  }
+  
+  .header-logo {
+    height: 60px;
+    padding: 8px;
+  }
+  
+  .container-custom {
+    padding: 0 16px;
+  }
+  
+  /* Asegurar que el contenido no se sobreponga */
+  .manual-content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
 /* Header Logo Styles */
 .header-logo-container {
   display: flex;
@@ -1585,6 +1608,34 @@ body {
   flex: 1;
   background-color: #f8fafc;
   padding-top: 80px; /* Compensar el header fijo */
+}
+
+/* Mobile adjustments for manual main */
+@media (max-width: 768px) {
+  .manual-main {
+    padding-top: 70px; /* Reducir padding para móvil */
+  }
+  
+  /* Buscador optimizado para móvil */
+  .search-container {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .search-input-wrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .search-filters {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
 }
 
 .manual-page {

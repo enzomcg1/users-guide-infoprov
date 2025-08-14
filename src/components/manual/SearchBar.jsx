@@ -18,9 +18,14 @@ const SearchBar = ({ onSearch, searchResults, isSearching, onClose, onSearchOpen
   ];
 
   useEffect(() => {
-    if (searchTerm.length > 2) {
+    if (searchTerm && searchTerm.length > 2) {
       setShowResults(true);
-      onSearch(searchTerm, activeFilter);
+      // Debounce para evitar demasiadas búsquedas
+      const timeoutId = setTimeout(() => {
+        onSearch(searchTerm, activeFilter);
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
     } else {
       setShowResults(false);
     }
@@ -45,8 +50,14 @@ const SearchBar = ({ onSearch, searchResults, isSearching, onClose, onSearchOpen
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchTerm.length > 2) {
-      onSearch(searchTerm, activeFilter);
+    if (searchTerm && searchTerm.length > 2) {
+      try {
+        onSearch(searchTerm, activeFilter);
+      } catch (error) {
+        console.error('Search error:', error);
+        // Fallback: mostrar mensaje de error
+        setShowResults(false);
+      }
     }
   };
 

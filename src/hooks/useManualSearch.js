@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-// Índice de búsqueda del manual
+// Índice de búsqueda del manual - optimizado para Vercel
 const manualIndex = [
   // Nómina
   {
@@ -227,59 +227,93 @@ export const useManualSearch = () => {
   const [isSearching, setIsSearching] = useState(false);
   const navigate = useNavigate();
 
+  // Función de búsqueda optimizada para Vercel
   const search = useCallback(async (searchTerm, filter = 'all') => {
-    if (!searchTerm || searchTerm.length < 3) {
-      setSearchResults([]);
-      return;
-    }
+    try {
+      if (!searchTerm || typeof searchTerm !== 'string' || searchTerm.length < 3) {
+        setSearchResults([]);
+        return;
+      }
 
-    setIsSearching(true);
+      setIsSearching(true);
 
-    // Simular búsqueda asíncrona
-    await new Promise(resolve => setTimeout(resolve, 300));
+      // Búsqueda síncrona optimizada para Vercel
+      const searchLower = searchTerm.toLowerCase().trim();
+      
+      // Filtrar por módulo si se especifica
+      const filteredIndex = filter === 'all' 
+        ? manualIndex 
+        : manualIndex.filter(item => item.module === filter);
 
-    const filteredIndex = filter === 'all' 
-      ? manualIndex 
-      : manualIndex.filter(item => item.module === filter);
-
-    const results = filteredIndex
-      .filter(item => {
-        const searchLower = searchTerm.toLowerCase();
-        return (
-          item.title.toLowerCase().includes(searchLower) ||
-          item.content.toLowerCase().includes(searchLower) ||
-          item.moduleName.toLowerCase().includes(searchLower) ||
-          item.type.toLowerCase().includes(searchLower)
-        );
-      })
-      .map(item => ({
-        ...item,
-        onClick: () => {
-          navigate(item.path);
-          if (item.sectionId) {
-            // Scroll to section after navigation
-            setTimeout(() => {
-              const element = document.getElementById(item.sectionId);
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+      // Búsqueda optimizada con scoring
+      const results = filteredIndex
+        .map(item => {
+          const titleMatch = item.title.toLowerCase().includes(searchLower);
+          const contentMatch = item.content.toLowerCase().includes(searchLower);
+          const moduleMatch = item.moduleName.toLowerCase().includes(searchLower);
+          const typeMatch = item.type.toLowerCase().includes(searchLower);
+          
+          // Calcular score de relevancia
+          let score = 0;
+          if (titleMatch) score += 10;
+          if (contentMatch) score += 5;
+          if (moduleMatch) score += 3;
+          if (typeMatch) score += 2;
+          
+          return {
+            ...item,
+            score,
+            hasMatch: titleMatch || contentMatch || moduleMatch || typeMatch
+          };
+        })
+        .filter(item => item.hasMatch)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 10)
+        .map(item => ({
+          ...item,
+          onClick: () => {
+            try {
+              navigate(item.path);
+              if (item.sectionId) {
+                // Scroll to section after navigation with error handling
+                setTimeout(() => {
+                  try {
+                    const element = document.getElementById(item.sectionId);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  } catch (scrollError) {
+                    console.warn('Error scrolling to section:', scrollError);
+                  }
+                }, 100);
               }
-            }, 100);
+            } catch (navError) {
+              console.error('Navigation error:', navError);
+              // Fallback: usar window.location
+              window.location.href = item.path;
+            }
           }
-        }
-      }))
-      .slice(0, 10); // Limitar a 10 resultados
+        }));
 
-    setSearchResults(results);
-    setIsSearching(false);
+      setSearchResults(results);
+    } catch (error) {
+      console.error('Search error:', error);
+      setSearchResults([]);
+    } finally {
+      setIsSearching(false);
+    }
   }, [navigate]);
 
   const clearSearch = useCallback(() => {
     setSearchResults([]);
   }, []);
 
+  // Memoizar resultados para mejor rendimiento
+  const memoizedResults = useMemo(() => searchResults, [searchResults]);
+
   return {
     search,
-    searchResults,
+    searchResults: memoizedResults,
     isSearching,
     clearSearch
   };
