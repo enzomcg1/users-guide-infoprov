@@ -17,6 +17,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Custom component styles */
@@ -177,18 +179,24 @@ body {
   right: 0;
   z-index: 50;
   transition: all 0.3s ease;
+  height: auto;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 /* Mobile navigation adjustments */
 @media (max-width: 768px) {
   .nav-fixed {
     z-index: 40;
-    padding: 8px 0;
+    padding: 4px 0;
+    height: auto;
+    min-height: 60px;
   }
   
   .header-logo {
-    height: 60px;
-    padding: 8px;
+    height: 50px;
+    padding: 6px;
   }
   
   .container-custom {
@@ -205,11 +213,60 @@ body {
   .nav-fixed {
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
   
   .nav-transparent {
     background: rgba(255, 255, 255, 0.95) !important;
     backdrop-filter: blur(10px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Eliminar espacio vacío blanco */
+  .manual-layout {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  .manual-main {
+    padding-top: 60px !important;
+    margin-top: 0;
+  }
+  
+  /* Eliminar cualquier espacio en blanco superior */
+  .App {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  /* Asegurar que el header no deje espacio vacío */
+  .nav-fixed {
+    margin: 0;
+    padding: 4px 0;
+  }
+  
+  /* Ajustar el logo para que no haya espacio extra */
+  .header-logo-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Eliminar espacio extra del body y html */
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Asegurar que no haya espacio en la parte superior */
+  .manual-layout {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  
+  /* Ajustar el contenido principal para que no haya espacio vacío */
+  .manual-main {
+    margin-top: 0 !important;
+    padding-top: 60px !important;
   }
 }
 
@@ -275,6 +332,8 @@ body {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
   position: relative;
   overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .hero-bg-elements {
@@ -1619,6 +1678,8 @@ body {
   flex: 1;
   background-color: #f8fafc;
   padding-top: 80px; /* Compensar el header fijo */
+  margin-top: 0;
+  position: relative;
 }
 
 /* Mobile adjustments for manual main */
@@ -1740,7 +1801,7 @@ body {
   /* Responsive para botones de navegación */
   @media (max-width: 768px) {
     .back-to-home-container {
-      top: 80px;
+      top: 70px;
       left: 16px;
       gap: 8px;
     }
