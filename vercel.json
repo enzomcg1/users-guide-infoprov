@@ -1,16 +1,13 @@
 {
-  "public": "build",
-  "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/**",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/static/**",
+      "source": "/static/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -19,7 +16,7 @@
       ]
     },
     {
-      "source": "/LOGO/**",
+      "source": "/LOGO/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -28,7 +25,7 @@
       ]
     },
     {
-      "source": "/images/**",
+      "source": "/images/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -37,7 +34,7 @@
       ]
     },
     {
-      "source": "/galeria/**",
+      "source": "/galeria/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -46,4 +43,4 @@
       ]
     }
   ]
-} 
+}
