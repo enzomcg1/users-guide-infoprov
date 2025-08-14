@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Search, BookOpen, Calculator, Users, Settings } from 'lucide-react';
 import { useManualSearch } from '../hooks/useManualSearch';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navigation = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   
   const { search, searchResults, isSearching, clearSearch } = useManualSearch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,8 +57,8 @@ const Navigation = () => {
 
   const scrollToSection = (href) => {
     if (href.startsWith('/')) {
-      // Es una ruta de React Router
-      window.location.href = href;
+      // Es una ruta de React Router - usar navigate
+      navigate(href);
     } else {
       // Es un ancla de la misma página
       const element = document.querySelector(href);

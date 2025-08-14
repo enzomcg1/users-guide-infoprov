@@ -5,66 +5,10 @@
       "destination": "/index.html"
     }
   ],
-  "redirects": [
-    {
-      "source": "/nomina",
-      "destination": "/nomina",
-      "permanent": false
-    },
-    {
-      "source": "/contabilidad",
-      "destination": "/contabilidad",
-      "permanent": false
-    },
-    {
-      "source": "/rrhh",
-      "destination": "/rrhh",
-      "permanent": false
-    },
-    {
-      "source": "/documentacion-tecnica",
-      "destination": "/documentacion-tecnica",
-      "permanent": false
-    }
-  ],
-  "headers": [
-    {
-      "source": "/static/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/LOGO/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/images/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/galeria/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "build",
+  "functions": {},
+  "regions": ["iad1"]
 }
