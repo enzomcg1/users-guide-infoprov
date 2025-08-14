@@ -5,6 +5,28 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    {
+      "source": "/nomina",
+      "destination": "/nomina",
+      "permanent": false
+    },
+    {
+      "source": "/contabilidad",
+      "destination": "/contabilidad",
+      "permanent": false
+    },
+    {
+      "source": "/rrhh",
+      "destination": "/rrhh",
+      "permanent": false
+    },
+    {
+      "source": "/documentacion-tecnica",
+      "destination": "/documentacion-tecnica",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/static/(.*)",

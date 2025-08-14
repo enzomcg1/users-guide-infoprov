@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navigation from '../Navigation';
 import Footer from '../Footer';
+import BackToHome from './BackToHome';
 
 const Layout = () => {
   return (
@@ -9,6 +10,7 @@ const Layout = () => {
       <Navigation />
       
       <main className="manual-main">
+        <BackToHome />
         <Outlet />
       </main>
       

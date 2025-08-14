@@ -200,6 +200,17 @@ body {
     margin-top: 0;
     padding-top: 0;
   }
+  
+  /* Eliminar sobreposición blanca en móvil */
+  .nav-fixed {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  .nav-transparent {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+  }
 }
 
 /* Header Logo Styles */
@@ -1678,6 +1689,81 @@ body {
   .search-result-content {
     font-size: 0.9rem;
     line-height: 1.4;
+  }
+  
+  /* Botones de navegación */
+  .back-to-home-container {
+    position: fixed;
+    top: 90px;
+    left: 20px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .back-to-home-btn,
+  .back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(164, 196, 66, 0.9);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(164, 196, 66, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .back-to-home-btn:hover,
+  .back-btn:hover {
+    background: rgba(164, 196, 66, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(164, 196, 66, 0.4);
+  }
+  
+  .back-btn {
+    background: rgba(100, 116, 139, 0.9);
+    box-shadow: 0 4px 12px rgba(100, 116, 139, 0.3);
+  }
+  
+  .back-btn:hover {
+    background: rgba(100, 116, 139, 1);
+    box-shadow: 0 6px 16px rgba(100, 116, 139, 0.4);
+  }
+  
+  /* Responsive para botones de navegación */
+  @media (max-width: 768px) {
+    .back-to-home-container {
+      top: 80px;
+      left: 16px;
+      gap: 8px;
+    }
+    
+    .back-to-home-btn,
+    .back-btn {
+      padding: 8px 12px;
+      font-size: 0.8rem;
+      border-radius: 20px;
+    }
+    
+    .back-to-home-btn span,
+    .back-btn span {
+      display: none; /* Solo mostrar iconos en móvil */
+    }
+    
+    .back-to-home-btn,
+    .back-btn {
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      padding: 0;
+    }
   }
   
   /* Tablas optimizadas para móvil */
