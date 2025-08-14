@@ -1636,6 +1636,79 @@ body {
     font-size: 0.85rem;
     padding: 6px 10px;
   }
+  
+  /* Modal de búsqueda optimizado para móvil */
+  .search-modal {
+    width: 95%;
+    max-width: 95%;
+    margin: 20px;
+    max-height: 90vh;
+  }
+  
+  .search-modal-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .search-input {
+    font-size: 1rem;
+    padding: 12px 16px;
+  }
+  
+  .search-filter-btn {
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    margin: 4px;
+  }
+  
+  .search-results-container {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
+  .search-result-item {
+    padding: 12px;
+    margin: 8px 0;
+  }
+  
+  .search-result-item h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+  
+  .search-result-content {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  /* Tablas optimizadas para móvil */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .manual-table {
+    min-width: 600px; /* Ancho mínimo para evitar compresión */
+  }
+  
+  .table-header,
+  .table-cell {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  /* Tabla responsive para móvil */
+  @media (max-width: 640px) {
+    .manual-table {
+      min-width: 500px;
+    }
+    
+    .table-header,
+    .table-cell {
+      padding: 6px 4px;
+      font-size: 0.8rem;
+    }
+  }
 }
 
 .manual-page {

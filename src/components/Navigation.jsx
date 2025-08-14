@@ -23,9 +23,14 @@ const Navigation = () => {
   }, []);
 
   useEffect(() => {
-    if (searchTerm.trim()) {
-      search(searchTerm, activeFilter);
-      setShowResults(true);
+    if (searchTerm && searchTerm.trim()) {
+      // Debounce para evitar demasiadas búsquedas
+      const timeoutId = setTimeout(() => {
+        search(searchTerm, activeFilter);
+        setShowResults(true);
+      }, 300);
+      
+      return () => clearTimeout(timeoutId);
     } else {
       setShowResults(false);
       clearSearch();
@@ -64,9 +69,14 @@ const Navigation = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (searchTerm.trim()) {
-      search(searchTerm, activeFilter);
-      setShowResults(true);
+    if (searchTerm && searchTerm.trim()) {
+      try {
+        search(searchTerm, activeFilter);
+        setShowResults(true);
+      } catch (error) {
+        console.error('Search error:', error);
+        setShowResults(false);
+      }
     }
   };
 
