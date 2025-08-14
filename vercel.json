@@ -8,7 +8,5 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "buildCommand": "npm run build:vercel",
-  "outputDirectory": "build",
-  "functions": {},
-  "regions": ["iad1"]
+  "outputDirectory": "build"
 }
