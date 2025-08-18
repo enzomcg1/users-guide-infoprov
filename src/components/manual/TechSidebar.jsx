@@ -66,7 +66,7 @@ const TechSidebar = () => {
       <div className="sidebar-header">
         <h3 className="sidebar-title">
           <Settings size={20} />
-          Documentación Técnica
+  
         </h3>
         <p className="sidebar-subtitle">Navega por las secciones técnicas</p>
       </div>

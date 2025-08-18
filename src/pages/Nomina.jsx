@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import Section from '../components/manual/Section';
-import ImageBlock from '../components/manual/ImageBlock';
 import Table from '../components/manual/Table';
 
 const Nomina = () => {

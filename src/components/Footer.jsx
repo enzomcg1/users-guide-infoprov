@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Phone, MapPin, ExternalLink, Instagram } from 'lucide-react';
+import { Phone, MapPin, Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,10 +43,8 @@ const Footer = () => {
             <h4>Recursos</h4>
             <ul className="footer-links">
               <li><a href="/">Manual Principal</a></li>
-              <li><a href="/documentacion-tecnica">Documentación Técnica</a></li>
-              <li><a href="#" className="external-link">
-                Videos Tutoriales <ExternalLink size={14} />
-              </a></li>
+              
+              
             </ul>
           </div>
 

@@ -12,17 +12,11 @@ const RRHH = () => {
         </div>
         <nav className="sidebar-nav">
           <ul className="sidebar-sections">
-            <li><a href="#generalidades" className="sidebar-section-link">Generalidades</a></li>
-            <li><a href="#configuracion" className="sidebar-section-link">Configuración</a></li>
-            <li><a href="#empleados" className="sidebar-section-link">Gestión de Empleados</a></li>
-            <li><a href="#valores" className="sidebar-section-link">Asignación de Valores</a></li>
-            <li><a href="#perfiles" className="sidebar-section-link">Perfiles y Cargos</a></li>
-            <li><a href="#evaluaciones" className="sidebar-section-link">Evaluaciones de Desempeño</a></li>
-            <li><a href="#capacitacion" className="sidebar-section-link">Capacitación y Desarrollo</a></li>
-            <li><a href="#reportes" className="sidebar-section-link">Reportes de RRHH</a></li>
-            <li><a href="#troubleshooting" className="sidebar-section-link">Troubleshooting</a></li>
-            <li><a href="#casos-especiales" className="sidebar-section-link">Casos Especiales</a></li>
-            <li><a href="#integracion" className="sidebar-section-link">Integración</a></li>
+            <li><a href="#asignacion-valores" className="sidebar-section-link">Asignación de Valores</a></li>
+            <li><a href="#valores-empleado" className="sidebar-section-link">Valores por Empleado</a></li>
+            <li><a href="#asignacion-masiva" className="sidebar-section-link">Asignación Masiva</a></li>
+            <li><a href="#filtros-sistema" className="sidebar-section-link">Filtros del Sistema</a></li>
+            <li><a href="#proceso-asignacion" className="sidebar-section-link">Proceso de Asignación</a></li>
           </ul>
         </nav>
       </div>
@@ -40,657 +34,392 @@ const RRHH = () => {
               />
             </div>
             <h1 className="module-main-title">Módulo de RRHH</h1>
-            <p className="module-subtitle">Sistema integral de gestión de recursos humanos</p>
+            <p className="module-subtitle">Asignación de Valores de Empleados - Avanza ERP</p>
           </div>
           
-          {/* Generalidades */}
-          <Section id="generalidades" title="Generalidades del Sistema">
+          {/* Asignación de Valores */}
+          <Section id="asignacion-valores" title="Asignación de Valores de Empleados">
             <div className="content-block">
               <h3>Descripción General</h3>
               <p>
-                El módulo de Recursos Humanos del ERP Avanza es una herramienta integral 
-                diseñada para gestionar todo el ciclo de vida del empleado, desde su 
-                contratación hasta su salida de la empresa.
+                El módulo de <strong>Asignación de Valores de Empleados</strong> forma parte del sistema 
+                <strong>NÓMINAS</strong> de Avanza ERP y permite gestionar de manera eficiente los valores 
+                salariales y compensaciones de los empleados de la organización.
               </p>
               
-              <h4>Características Principales</h4>
-              <ul>
-                <li><strong>Gestión Integral:</strong> Manejo completo del ciclo de vida del empleado</li>
-                <li><strong>Asignación de Valores:</strong> Configuración automática de parámetros salariales</li>
-                <li><strong>Evaluaciones:</strong> Sistema de evaluación de desempeño continuo</li>
-                <li><strong>Capacitación:</strong> Planificación y gestión de desarrollo profesional</li>
-                <li><strong>Compliance:</strong> Cumplimiento con normativas laborales vigentes</li>
-              </ul>
-
-              <h4>Módulos Relacionados</h4>
-              <div className="database-schema">
+              <h4>Ubicación en el Sistema</h4>
+              <div className="system-location">
                 <ul>
-                  <li><strong>Nómina:</strong> Integración directa con cálculos salariales</li>
-                  <li><strong>Contabilidad:</strong> Distribución de costos por departamento</li>
-                  <li><strong>Inventarios:</strong> Control de activos asignados a empleados</li>
-                  <li><strong>Facturación:</strong> Cálculo de costos por proyecto</li>
+                  <li><strong>Módulo:</strong> NÓMINAS</li>
+                  <li><strong>Menú:</strong> EMPLEADOS</li>
+                  <li><strong>Programa:</strong> VALORES DE EMPLEADOS</li>
                 </ul>
               </div>
-            </div>
-          </Section>
 
-          {/* Configuración */}
-          <Section id="configuracion" title="Configuración del Sistema">
-            <div className="content-block">
-              <h3>Parámetros de Configuración</h3>
-              
-              <h4>Configuración General</h4>
+              <h4>Funcionalidades Principales</h4>
               <ul>
-                <li><strong>Empresa:</strong> Datos organizacionales y estructura</li>
-                <li><strong>Departamentos:</strong> Organización jerárquica de la empresa</li>
-                <li><strong>Cargos:</strong> Definición de posiciones y responsabilidades</li>
-                <li><strong>Ubicaciones:</strong> Sucursales y centros de trabajo</li>
-              </ul>
-
-              <h4>Parámetros de RRHH</h4>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Parámetro</th>
-                    <th>Descripción</th>
-                    <th>Valor por Defecto</th>
-                    <th>Obligatorio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Período de Evaluación</td>
-                    <td>Frecuencia de evaluaciones de desempeño</td>
-                    <td>Semestral</td>
-                    <td>Sí</td>
-                  </tr>
-                  <tr>
-                    <td>Escala de Evaluación</td>
-                    <td>Escala numérica para evaluaciones</td>
-                    <td>1-5</td>
-                    <td>Sí</td>
-                  </tr>
-                  <tr>
-                    <td>Período de Capacitación</td>
-                    <td>Frecuencia de capacitaciones obligatorias</td>
-                    <td>Anual</td>
-                    <td>Sí</td>
-                  </tr>
-                  <tr>
-                    <td>Horas Mínimas</td>
-                    <td>Horas mínimas de capacitación por año</td>
-                    <td>40</td>
-                    <td>Sí</td>
-                  </tr>
-                  <tr>
-                    <td>Período de Rotación</td>
-                    <td>Período para análisis de rotación</td>
-                    <td>Mensual</td>
-                    <td>No</td>
-                  </tr>
-                </tbody>
-              </Table>
-
-              <h4>Configuración de Compliance</h4>
-              <ul>
-                <li><strong>Normativas Laborales:</strong> Legislación aplicable por país</li>
-                <li><strong>Documentos Obligatorios:</strong> Documentación requerida por empleado</li>
-                <li><strong>Auditorías:</strong> Frecuencia de auditorías internas</li>
-                <li><strong>Reportes Regulatorios:</strong> Reportes para entidades gubernamentales</li>
+                <li><strong>Gestión Individual:</strong> Asignación de valores por empleado</li>
+                <li><strong>Asignación Masiva:</strong> Actualización masiva de valores salariales</li>
+                <li><strong>Control de Estados:</strong> Seguimiento del estado de las asignaciones</li>
+                <li><strong>Historial de Cambios:</strong> Trazabilidad de modificaciones salariales</li>
+                <li><strong>Validaciones Automáticas:</strong> Control de consistencia de datos</li>
               </ul>
             </div>
           </Section>
 
-          {/* Gestión de Empleados */}
-          <Section id="empleados" title="Gestión de Empleados">
+          {/* Valores por Empleado */}
+          <Section id="valores-empleado" title="Valores por Empleado">
             <div className="content-block">
-              <h3>Información del Empleado</h3>
+              <h3>Pantalla Principal</h3>
               <p>
-                El sistema mantiene información completa y actualizada de cada empleado:
+                Esta sección de la pantalla muestra la siguiente información detallada de cada empleado:
               </p>
               
-              <h4>Datos Personales</h4>
+              <h4>Campos de Información</h4>
               <Table>
                 <thead>
                   <tr>
-                    <th>Categoría</th>
-                    <th>Campos</th>
-                    <th>Obligatorio</th>
-                    <th>Validación</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Identificación</td>
-                    <td>Número de identificación, tipo, fecha de expedición</td>
-                    <td>Sí</td>
-                    <td>Formato válido según país</td>
-                  </tr>
-                  <tr>
-                    <td>Datos Básicos</td>
-                    <td>Nombres, apellidos, fecha de nacimiento, género</td>
-                    <td>Sí</td>
-                    <td>Mayor de 18 años</td>
-                  </tr>
-                  <tr>
-                    <td>Contacto</td>
-                    <td>Teléfono, email, dirección, ciudad</td>
-                    <td>Sí</td>
-                    <td>Email válido, teléfono válido</td>
-                  </tr>
-                  <tr>
-                    <td>Familiar</td>
-                    <td>Estado civil, dependientes, contacto de emergencia</td>
-                    <td>No</td>
-                    <td>Opcional</td>
-                  </tr>
-                </tbody>
-              </Table>
-
-              <h4>Datos Laborales</h4>
-              <ul>
-                <li><strong>Contratación:</strong> Fecha de ingreso, tipo de contrato, período de prueba</li>
-                <li><strong>Organización:</strong> Cargo, departamento, supervisor, ubicación</li>
-                <li><strong>Remuneración:</strong> Salario base, bonificaciones, beneficios</li>
-                <li><strong>Horarios:</strong> Jornada laboral, turnos, flexibilidad</li>
-              </ul>
-
-              <h3>Proceso de Contratación</h3>
-              <p>
-                Para contratar un nuevo empleado:
-              </p>
-              <ol>
-                <li>Complete la solicitud de contratación</li>
-                <li>Verifique la documentación requerida</li>
-                <li>Configure los parámetros salariales</li>
-                <li>Asigne el cargo y departamento</li>
-                <li>Configure los accesos al sistema</li>
-                <li>Programe la inducción y capacitación</li>
-              </ol>
-
-              <h4>Documentos Requeridos</h4>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Documento</th>
+                    <th>Campo</th>
                     <th>Descripción</th>
-                    <th>Obligatorio</th>
-                    <th>Vigencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Documento de Identidad</td>
-                    <td>Cédula, pasaporte o documento equivalente</td>
-                    <td>Sí</td>
-                    <td>Vigente</td>
-                  </tr>
-                  <tr>
-                    <td>Hoja de Vida</td>
-                    <td>CV actualizado con experiencia laboral</td>
-                    <td>Sí</td>
-                    <td>Reciente</td>
-                  </tr>
-                  <tr>
-                    <td>Certificados Laborales</td>
-                    <td>Experiencia previa verificable</td>
-                    <td>No</td>
-                    <td>Últimos 5 años</td>
-                  </tr>
-                  <tr>
-                    <td>Referencias</td>
-                    <td>Referencias laborales verificables</td>
-                    <td>No</td>
-                    <td>Actuales</td>
-                  </tr>
-                  <tr>
-                    <td>Exámenes Médicos</td>
-                    <td>Certificado de aptitud laboral</td>
-                    <td>Sí</td>
-                    <td>Anual</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </Section>
-
-          {/* Asignación de Valores */}
-          <Section id="valores" title="Asignación de Valores">
-            <div className="content-block">
-              <h3>Valores Salariales</h3>
-              <p>
-                El sistema permite configurar diferentes tipos de valores para el cálculo 
-                de salarios:
-              </p>
-              
-              <h4>Tipos de Valores</h4>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Tipo</th>
-                    <th>Descripción</th>
-                    <th>Frecuencia</th>
                     <th>Ejemplo</th>
+                    <th>Tipo</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <tr>
+                    <td>Sucursal</td>
+                    <td>Ubicación física de la empresa donde trabaja el empleado</td>
+                    <td>COMERCIAL EL CACIQUE S.R.L</td>
+                    <td>Texto</td>
+                  </tr>
+                  <tr>
+                    <td>Departamento</td>
+                    <td>Área funcional a la que pertenece el empleado</td>
+                    <td>Ventas, Administración, Producción</td>
+                    <td>Lista</td>
+                  </tr>
+                  <tr>
+                    <td>Sección</td>
+                    <td>Subdivisión específica dentro del departamento</td>
+                    <td>Caja, Atención al Cliente</td>
+                    <td>Lista</td>
+                  </tr>
+                  <tr>
+                    <td>Tipo Valor</td>
+                    <td>Categoría del valor asignado al empleado</td>
+                    <td>Salario Base, Bonificaciones</td>
+                    <td>Lista</td>
+                  </tr>
+                  <tr>
+                    <td>Empleado</td>
+                    <td>Identificador único del empleado en el sistema</td>
+                    <td>EMP001, EMP002</td>
+                    <td>Código</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre Completo</td>
+                    <td>Nombre completo del empleado</td>
+                    <td>Juan Carlos Pérez González</td>
+                    <td>Texto</td>
+                  </tr>
+                  <tr>
+                    <td>Fecha Desde</td>
+                    <td>Fecha de inicio de vigencia del valor</td>
+                    <td>01/01/2025</td>
+                    <td>Fecha</td>
+                  </tr>
+                  <tr>
+                    <td>Fecha Hasta</td>
+                    <td>Fecha de fin de vigencia del valor</td>
+                    <td>31/12/2025</td>
+                    <td>Fecha</td>
+                  </tr>
+                  <tr>
+                    <td>No. Documento</td>
+                    <td>Número de identificación del empleado</td>
+                    <td>12345678</td>
+                    <td>Número</td>
+                  </tr>
+                  <tr>
+                    <td>Activo</td>
+                    <td>Indicador de si el empleado está activo en el sistema</td>
+                    <td>Sí/No</td>
+                    <td>Booleano</td>
+                  </tr>
                   <tr>
                     <td>Salario Base</td>
-                    <td>Remuneración básica del empleado</td>
-                    <td>Mensual</td>
-                    <td>$2,000,000</td>
+                    <td>Monto base del salario del empleado</td>
+                    <td>3000000</td>
+                    <td>Monetario</td>
                   </tr>
                   <tr>
-                    <td>Bonificaciones</td>
-                    <td>Pagos adicionales por desempeño</td>
-                    <td>Variable</td>
-                    <td>Bono por metas</td>
-                  </tr>
-                  <tr>
-                    <td>Beneficios</td>
-                    <td>Compensaciones no monetarias</td>
-                    <td>Mensual</td>
-                    <td>Seguro médico</td>
-                  </tr>
-                  <tr>
-                    <td>Deducciones</td>
-                    <td>Descuentos obligatorios o voluntarios</td>
-                    <td>Mensual</td>
-                    <td>Seguridad social</td>
+                    <td>Estado</td>
+                    <td>Estado actual de la asignación de valores</td>
+                    <td>Activo, Inactivo, Pendiente</td>
+                    <td>Lista</td>
                   </tr>
                 </tbody>
               </Table>
 
-              <h4>Configuración de Valores</h4>
-              <ul>
-                <li><strong>Valores Fijos:</strong> Montos que no cambian mensualmente</li>
-                <li><strong>Valores Variables:</strong> Montos que dependen de criterios específicos</li>
-                <li><strong>Valores por Porcentaje:</strong> Cálculos basados en porcentajes del salario base</li>
-                <li><strong>Valores por Escala:</strong> Montos según nivel o antigüedad</li>
-              </ul>
-
-              <h3>Proceso de Asignación</h3>
+              <h4>Acceso a Funcionalidades</h4>
               <p>
-                Para asignar valores a un empleado:
+                Para ingresar a las opciones de asignación masiva, se debe usar el botón 
+                <strong>ASIGN. MASIVA</strong> ubicado en la interfaz principal.
               </p>
-              <ol>
-                <li>Acceda al perfil del empleado</li>
-                <li>Seleccione la sección "Valores Salariales"</li>
-                <li>Configure el salario base</li>
-                <li>Agregue bonificaciones aplicables</li>
-                <li>Configure beneficios y deducciones</li>
-                <li>Valide que los totales sean correctos</li>
-                <li>Guarde y active la configuración</li>
-              </ol>
+            </div>
+          </Section>
+
+          {/* Asignación Masiva */}
+          <Section id="asignacion-masiva" title="Asignación Masiva de Valores de Empleado">
+            <div className="content-block">
+              <h3>Funcionalidad de Asignación Masiva</h3>
+              <p>
+                Al hacer clic en el botón <code>Asign. Masiva</code>, se abre una ventana para agregar 
+                o modificar registros de manera masiva, permitiendo actualizar múltiples empleados 
+                simultáneamente.
+              </p>
+              
+              <h4>Campos de la Ventana de Asignación Masiva</h4>
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Campo</th>
+                    <th>Descripción</th>
+                    <th>Ejemplo</th>
+                    <th>Propósito</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sucursal</td>
+                    <td>Ubicación de la empresa para la asignación</td>
+                    <td>COMERCIAL EL CACIQUE S.R.L</td>
+                    <td>Identificar la ubicación de los empleados</td>
+                  </tr>
+                  <tr>
+                    <td>Departamento</td>
+                    <td>Área funcional para la asignación masiva</td>
+                    <td>Ventas, Administración</td>
+                    <td>Filtrar empleados por departamento</td>
+                  </tr>
+                  <tr>
+                    <td>Sección</td>
+                    <td>Subdivisión específica del departamento</td>
+                    <td>Caja</td>
+                    <td>Filtrar empleados por sección</td>
+                  </tr>
+                  <tr>
+                    <td>Valor Actual</td>
+                    <td>Monto actual del valor que se desea cambiar</td>
+                    <td>3000000</td>
+                    <td>Identificar empleados con valor específico</td>
+                  </tr>
+                  <tr>
+                    <td>Tipo Valor</td>
+                    <td>Categoría del valor a modificar</td>
+                    <td>Salario Base</td>
+                    <td>Especificar el tipo de valor a actualizar</td>
+                  </tr>
+                  <tr>
+                    <td>Valor a Aplicar</td>
+                    <td>Nuevo monto que se aplicará a los empleados</td>
+                    <td>3200000</td>
+                    <td>Definir el nuevo valor salarial</td>
+                  </tr>
+                  <tr>
+                    <td>Aplicar Desde</td>
+                    <td>Fecha de inicio de vigencia del nuevo valor</td>
+                    <td>01/07/2025</td>
+                    <td>Establecer cuándo entra en vigencia</td>
+                  </tr>
+                </tbody>
+              </Table>
+
+              <h4>Ventajas de la Asignación Masiva</h4>
+              <ul>
+                <li><strong>Eficiencia:</strong> Actualización de múltiples empleados en una sola operación</li>
+                <li><strong>Consistencia:</strong> Aplicación uniforme de cambios salariales</li>
+                <li><strong>Control:</strong> Gestión centralizada de modificaciones salariales</li>
+                <li><strong>Auditoría:</strong> Trazabilidad completa de cambios masivos</li>
+                <li><strong>Validación:</strong> Control automático de consistencia de datos</li>
+              </ul>
+            </div>
+          </Section>
+
+          {/* Filtros del Sistema */}
+          <Section id="filtros-sistema" title="Filtros del Sistema y su Propósito">
+            <div className="content-block">
+              <h3>Sistema de Filtros</h3>
+              <p>
+                El sistema de asignación masiva incluye filtros específicos que permiten identificar 
+                y seleccionar de manera precisa los empleados que serán afectados por los cambios.
+              </p>
+              
+              <h4>Descripción de Filtros</h4>
+              <div className="filters-grid">
+                <div className="filter-category">
+                  <h5>Filtros de Ubicación</h5>
+                  <ul>
+                    <li><strong>Sucursal:</strong> Se utilizan para identificar las ubicaciones de los empleados</li>
+                    <li><strong>Departamento:</strong> Filtra empleados por área funcional</li>
+                    <li><strong>Sección:</strong> Filtra empleados por subdivisión específica</li>
+              </ul>
+                </div>
+                
+                <div className="filter-category">
+                  <h5>Filtros de Valor</h5>
+                  <ul>
+                    <li><strong>Valor Actual:</strong> Se utiliza para identificar solo a los empleados que ganan un monto determinado actualmente</li>
+                    <li><strong>Tipo Valor:</strong> Debe ser siempre <strong>SALARIO BASE</strong></li>
+                    <li><strong>Valor a Aplicar:</strong> Es donde se determina el salario nuevo</li>
+              </ul>
+            </div>
+                
+                <div className="filter-category">
+                  <h5>Filtros de Tiempo</h5>
+                  <ul>
+                    <li><strong>Aplicar Desde:</strong> Determina la fecha en que entra en vigencia el nuevo valor</li>
+              </ul>
+            </div>
+            </div>
+
+              <h4>Propósito de Cada Filtro</h4>
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Filtro</th>
+                    <th>Propósito</th>
+                    <th>Beneficio</th>
+                    <th>Ejemplo de Uso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sucursal, Departamento y Sección</td>
+                    <td>Identificar ubicaciones específicas de empleados</td>
+                    <td>Precisión en la selección de personal</td>
+                    <td>Actualizar solo empleados de la sucursal "Centro"</td>
+                  </tr>
+                  <tr>
+                    <td>Valor Actual</td>
+                    <td>Identificar empleados con salario específico</td>
+                    <td>Selección por nivel salarial actual</td>
+                    <td>Actualizar empleados que ganan $3,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>Tipo Valor</td>
+                    <td>Especificar la categoría de valor a modificar</td>
+                    <td>Claridad en el tipo de cambio</td>
+                    <td>Modificar solo salarios base, no bonificaciones</td>
+                  </tr>
+                  <tr>
+                    <td>Valor a Aplicar</td>
+                    <td>Definir el nuevo monto salarial</td>
+                    <td>Establecer el valor objetivo</td>
+                    <td>Establecer nuevo salario en $3,200,000</td>
+                  </tr>
+                  <tr>
+                    <td>Aplicar Desde</td>
+                    <td>Determinar fecha de vigencia del cambio</td>
+                    <td>Control temporal de implementación</td>
+                    <td>Cambio efectivo desde el 1 de julio</td>
+                  </tr>
+                </tbody>
+              </Table>
+            </div>
+          </Section>
+
+          {/* Proceso de Asignación */}
+          <Section id="proceso-asignacion" title="Proceso de Asignación de Valores">
+            <div className="content-block">
+              <h3>Flujo del Proceso</h3>
+              <p>
+                El proceso de asignación de valores de empleados sigue un flujo estructurado que 
+                garantiza la precisión y consistencia de los cambios salariales.
+              </p>
+              
+              <h4>Pasos del Proceso</h4>
+              <div className="process-steps">
+                <div className="process-step">
+                  <h5>1. Acceso al Sistema</h5>
+                  <p>
+                    Navegar al módulo NÓMINAS → Menú EMPLEADOS → Programa VALORES DE EMPLEADOS
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>2. Selección de Empleados</h5>
+                  <p>
+                    Utilizar los filtros disponibles para identificar los empleados que serán afectados
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>3. Activación de Asignación Masiva</h5>
+                  <p>
+                    Hacer clic en el botón "ASIGN. MASIVA" para abrir la ventana de asignación masiva
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>4. Configuración de Filtros</h5>
+                  <p>
+                    Configurar todos los filtros necesarios para identificar el grupo de empleados objetivo
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>5. Definición de Nuevos Valores</h5>
+                  <p>
+                    Establecer el nuevo valor a aplicar y la fecha de vigencia
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>6. Validación y Confirmación</h5>
+                  <p>
+                    Revisar la información y confirmar la asignación masiva
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>7. Procesamiento del Sistema</h5>
+                  <p>
+                    El sistema procesa automáticamente todos los empleados que cumplan con los filtros
+                  </p>
+                </div>
+                
+                <div className="process-step">
+                  <h5>8. Verificación de Resultados</h5>
+                  <p>
+                    Revisar que los cambios se hayan aplicado correctamente a todos los empleados
+                  </p>
+                </div>
+              </div>
+
+              <h3>Consideraciones Importantes</h3>
+              <p>
+                Durante el proceso de asignación masiva, es fundamental considerar los siguientes aspectos:
+              </p>
+              
+              <h4>Aspectos Clave</h4>
+              <ul>
+                <li><strong>Validación de Filtros:</strong> Verificar que los filtros seleccionados identifiquen correctamente al grupo objetivo</li>
+                <li><strong>Consistencia de Datos:</strong> Asegurar que los valores nuevos sean coherentes con la política salarial</li>
+                <li><strong>Fecha de Vigencia:</strong> Establecer fechas apropiadas para la implementación de cambios</li>
+                <li><strong>Auditoría:</strong> Mantener registro de todos los cambios realizados</li>
+                <li><strong>Comunicación:</strong> Informar a los empleados afectados sobre los cambios salariales</li>
+              </ul>
 
               <h4>Validaciones del Sistema</h4>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Validación</th>
-                    <th>Descripción</th>
-                    <th>Acción del Sistema</th>
-                    <th>Resolución</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Salario Mínimo</td>
-                    <td>Verificar que no esté por debajo del mínimo legal</td>
-                    <td>Bloquear asignación</td>
-                    <td>Ajustar salario base</td>
-                  </tr>
-                  <tr>
-                    <td>Límite de Bonificaciones</td>
-                    <td>Verificar que no exceda el límite permitido</td>
-                    <td>Advertencia</td>
-                    <td>Revisar montos</td>
-                  </tr>
-                  <tr>
-                    <td>Deducciones</td>
-                    <td>Verificar que no excedan el 50% del salario</td>
-                    <td>Bloquear asignación</td>
-                    <td>Ajustar deducciones</td>
-                  </tr>
-                  <tr>
-                    <td>Total Neto</td>
-                    <td>Verificar que el salario neto sea positivo</td>
-                    <td>Bloquear asignación</td>
-                    <td>Revisar configuración</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </Section>
-
-          {/* Perfiles y Cargos */}
-          <Section id="perfiles" title="Perfiles y Cargos">
-            <div className="content-block">
-              <h3>Estructura Organizacional</h3>
-              <p>
-                El sistema mantiene la estructura organizacional de la empresa:
-              </p>
-              
-              <h4>Departamentos</h4>
               <ul>
-                <li>Administración y Finanzas</li>
-                <li>Recursos Humanos</li>
-                <li>Ventas y Marketing</li>
-                <li>Operaciones y Producción</li>
-                <li>Tecnología de la Información</li>
-                <li>Servicios al Cliente</li>
-              </ul>
-
-              <h4>Cargos y Posiciones</h4>
-              <ul>
-                <li>Director General</li>
-                <li>Gerente de Departamento</li>
-                <li>Supervisor</li>
-                <li>Analista</li>
-                <li>Asistente</li>
-                <li>Operador</li>
-              </ul>
-
-              <h3>Configuración de Cargos</h3>
-              <p>
-                Para crear un nuevo cargo:
-              </p>
-              <ol>
-                <li>Acceda al menú "RRHH" → "Organización" → "Cargos"</li>
-                <li>Seleccione "Nuevo Cargo"</li>
-                <li>Ingrese el nombre del cargo</li>
-                <li>Seleccione el departamento</li>
-                <li>Configure el nivel jerárquico</li>
-                <li>Defina las responsabilidades</li>
-                <li>Configure los requisitos mínimos</li>
-                <li>Establezca el rango salarial</li>
-              </ol>
-            </div>
-          </Section>
-
-          {/* Evaluaciones de Desempeño */}
-          <Section id="evaluaciones" title="Evaluaciones de Desempeño">
-            <div className="content-block">
-              <h3>Sistema de Evaluación</h3>
-              <p>
-                El sistema de evaluaciones permite medir el desempeño de los empleados:
-              </p>
-              
-              <h4>Criterios de Evaluación</h4>
-              <ul>
-                <li>Desempeño en el cargo</li>
-                <li>Iniciativa y creatividad</li>
-                <li>Trabajo en equipo</li>
-                <li>Comunicación efectiva</li>
-                <li>Cumplimiento de objetivos</li>
-                <li>Desarrollo profesional</li>
-              </ul>
-
-              <h4>Escalas de Evaluación</h4>
-              <ul>
-                <li><strong>Excelente (5):</strong> Supera todas las expectativas</li>
-                <li><strong>Muy Bueno (4):</strong> Cumple todas las expectativas</li>
-                <li><strong>Bueno (3):</strong> Cumple las expectativas básicas</li>
-                <li><strong>Regular (2):</strong> Cumple parcialmente las expectativas</li>
-                <li><strong>Deficiente (1):</strong> No cumple las expectativas</li>
-              </ul>
-
-              <h3>Proceso de Evaluación</h3>
-              <p>
-                Para realizar una evaluación de desempeño:
-              </p>
-              <ol>
-                <li>Programe la fecha de evaluación</li>
-                <li>Notifique al empleado y evaluador</li>
-                <li>Complete la evaluación según los criterios</li>
-                <li>Programe la entrevista de retroalimentación</li>
-                <li>Documente los resultados y acuerdos</li>
-                <li>Establezca el plan de mejora</li>
-              </ol>
-            </div>
-          </Section>
-
-          {/* Capacitación y Desarrollo */}
-          <Section id="capacitacion" title="Capacitación y Desarrollo">
-            <div className="content-block">
-              <h3>Plan de Capacitación</h3>
-              <p>
-                El sistema permite planificar y gestionar actividades de capacitación:
-              </p>
-              
-              <h4>Tipos de Capacitación</h4>
-              <ul>
-                <li><strong>Inducción:</strong> Para nuevos empleados</li>
-                <li><strong>Técnica:</strong> Específica del cargo</li>
-                <li><strong>Soft Skills:</strong> Habilidades blandas</li>
-                <li><strong>Seguridad:</strong> Normas de seguridad laboral</li>
-                <li><strong>Compliance:</strong> Cumplimiento normativo</li>
-              </ul>
-
-              <h4>Modalidades de Capacitación</h4>
-              <ul>
-                <li>Presencial en aula</li>
-                <li>Virtual sincrónica</li>
-                <li>E-learning asincrónico</li>
-                <li>Capacitación en el puesto</li>
-                <li>Mentoría y coaching</li>
-              </ul>
-
-              <h3>Gestión de Capacitaciones</h3>
-              <p>
-                Para gestionar una actividad de capacitación:
-              </p>
-              <ol>
-                <li>Identifique las necesidades de capacitación</li>
-                <li>Diseñe el programa de capacitación</li>
-                <li>Seleccione los participantes</li>
-                <li>Programe fechas y horarios</li>
-                <li>Asigne recursos y facilitadores</li>
-                <li>Ejecute la capacitación</li>
-                <li>Evalúe los resultados</li>
-                <li>Documente la certificación</li>
-              </ol>
-            </div>
-          </Section>
-
-          {/* Reportes de RRHH */}
-          <Section id="reportes" title="Reportes de RRHH">
-            <div className="content-block">
-              <h3>Reportes Disponibles</h3>
-              <p>
-                El módulo de RRHH genera los siguientes reportes:
-              </p>
-              
-              <h4>Reportes de Personal</h4>
-              <ul>
-                <li>Listado de empleados por departamento</li>
-                <li>Información detallada de empleados</li>
-                <li>Antigüedad y rotación de personal</li>
-                <li>Distribución por edad y género</li>
-                <li>Análisis de ausentismo</li>
-              </ul>
-
-              <h4>Reportes de Compensación</h4>
-              <ul>
-                <li>Análisis de salarios por cargo</li>
-                <li>Comparativo salarial por departamento</li>
-                <li>Evolución salarial por empleado</li>
-                <li>Análisis de bonificaciones</li>
-                <li>Proyecciones salariales</li>
-              </ul>
-
-              <h4>Reportes de Desarrollo</h4>
-              <ul>
-                <li>Plan de capacitación anual</li>
-                <li>Evaluaciones de desempeño</li>
-                <li>Plan de sucesión</li>
-                <li>Análisis de competencias</li>
-                <li>Reportes de compliance</li>
-              </ul>
-
-              <h3>Configuración de Reportes</h3>
-              <p>
-                Personalice los reportes según las necesidades:
-              </p>
-              <ol>
-                <li>Configure los filtros por período</li>
-                <li>Defina los grupos de análisis</li>
-                <li>Establezca los formatos de presentación</li>
-                <li>Configure la exportación automática</li>
-                <li>Programe la generación periódica</li>
-              </ol>
-            </div>
-          </Section>
-
-          {/* Troubleshooting */}
-          <Section id="troubleshooting" title="Troubleshooting y Solución de Problemas">
-            <div className="content-block">
-              <h3>Problemas Comunes y Soluciones</h3>
-              
-              <h4>Errores de Validación</h4>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Error</th>
-                    <th>Descripción</th>
-                    <th>Causa</th>
-                    <th>Solución</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Empleado Duplicado</td>
-                    <td>Empleado ya existe en el sistema</td>
-                    <td>Número de identificación duplicado</td>
-                    <td>Verificar identificación o usar alias</td>
-                  </tr>
-                  <tr>
-                    <td>Valores Inválidos</td>
-                    <td>Los valores asignados no son válidos</td>
-                    <td>Configuración incorrecta</td>
-                    <td>Revisar parámetros de validación</td>
-                  </tr>
-                  <tr>
-                    <td>Documentos Faltantes</td>
-                    <td>Documentos obligatorios no cargados</td>
-                    <td>Documentación incompleta</td>
-                    <td>Completar documentación requerida</td>
-                  </tr>
-                  <tr>
-                    <td>Evaluación Pendiente</td>
-                    <td>Evaluación de desempeño vencida</td>
-                    <td>Evaluación no realizada</td>
-                    <td>Programar evaluación inmediata</td>
-                  </tr>
-                  <tr>
-                    <td>Capacitación Vencida</td>
-                    <td>Capacitación obligatoria vencida</td>
-                    <td>Capacitación no completada</td>
-                    <td>Programar capacitación urgente</td>
-                  </tr>
-                </tbody>
-              </Table>
-
-              <h4>Validaciones del Sistema</h4>
-              <p>
-                El sistema ERP Avanza incluye validaciones automáticas para:
-              </p>
-              <ul>
-                <li><strong>Integridad de Datos:</strong> Verificación de campos obligatorios</li>
-                <li><strong>Consistencia de Valores:</strong> Validación de parámetros salariales</li>
-                <li><strong>Documentación:</strong> Control de documentos requeridos</li>
-                <li><strong>Evaluaciones:</strong> Seguimiento de evaluaciones pendientes</li>
+                <li><strong>Integridad de Datos:</strong> Verificación automática de campos obligatorios</li>
+                <li><strong>Consistencia Salarial:</strong> Validación de rangos salariales permitidos</li>
+                <li><strong>Fechas de Vigencia:</strong> Control de fechas válidas para implementación</li>
+                <li><strong>Permisos de Usuario:</strong> Verificación de autorizaciones para cambios masivos</li>
               </ul>
             </div>
           </Section>
-
-          {/* Casos Especiales */}
-          <Section id="casos-especiales" title="Casos Especiales y Excepciones">
-            <div className="content-block">
-              <h3>Manejo de Casos Especiales</h3>
-              
-              <h4>Casos de Contratación</h4>
-              <ul>
-                <li><strong>Contratación Temporal:</strong> Empleados por proyecto o temporada</li>
-                <li><strong>Contratación a Tiempo Parcial:</strong> Jornadas reducidas</li>
-                <li><strong>Contratación Remota:</strong> Trabajo desde casa o ubicación remota</li>
-                <li><strong>Contratación Internacional:</strong> Empleados extranjeros</li>
-              </ul>
-
-              <h4>Casos de Gestión</h4>
-              <Table>
-                <thead>
-                  <tr>
-                    <th>Caso</th>
-                    <th>Descripción</th>
-                    <th>Proceso</th>
-                    <th>Consideraciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Cambio de Cargo</td>
-                    <td>Promoción o cambio de funciones</td>
-                    <td>Actualizar perfil y valores</td>
-                    <td>Mantener historial</td>
-                  </tr>
-                  <tr>
-                    <td>Transferencia</td>
-                    <td>Cambio de departamento o ubicación</td>
-                    <td>Actualizar asignaciones</td>
-                    <td>Verificar permisos</td>
-                  </tr>
-                  <tr>
-                    <td>Licencias</td>
-                    <td>Ausencias temporales por diferentes motivos</td>
-                    <td>Configurar período de licencia</td>
-                    <td>Mantener beneficios</td>
-                  </tr>
-                  <tr>
-                    <td>Reincorporación</td>
-                    <td>Retorno después de ausencia prolongada</td>
-                    <td>Reactivar perfil completo</td>
-                    <td>Verificar documentación</td>
-                  </tr>
-                </tbody>
-              </Table>
-            </div>
-          </Section>
-
-          {/* Integración */}
-          <Section id="integracion" title="Integración con Otros Módulos">
-            <div className="content-block">
-              <h3>Sistema de Integración</h3>
-              
-              <h4>Integración con Nómina</h4>
-              <ul>
-                <li><strong>Datos del Empleado:</strong> Información personal y laboral sincronizada</li>
-                <li><strong>Valores Salariales:</strong> Configuración automática de parámetros</li>
-                <li><strong>Cambios Organizacionales:</strong> Actualización automática de estructura</li>
-                <li><strong>Reportes Consolidados:</strong> Información unificada de personal</li>
-              </ul>
-
-              <h4>Integración con Contabilidad</h4>
-              <ul>
-                <li><strong>Distribución de Costos:</strong> Asignación automática por departamento</li>
-                <li><strong>Centros de Costo:</strong> Clasificación automática de gastos</li>
-                <li><strong>Presupuestos:</strong> Control de presupuestos por área</li>
-                <li><strong>Reportes Financieros:</strong> Análisis de costos de personal</li>
-              </ul>
-
-              <h4>Funcionalidades de Integración</h4>
-              <p>
-                El ERP Avanza permite la integración automática entre módulos para:
-              </p>
-              <ul>
-                <li><strong>Sincronización de Datos:</strong> Actualización automática entre módulos</li>
-                <li><strong>Reportes Consolidados:</strong> Información unificada del sistema</li>
-                <li><strong>Validaciones Cruzadas:</strong> Verificación de consistencia entre módulos</li>
-                <li><strong>Auditoría Integrada:</strong> Trazabilidad completa de transacciones</li>
-              </ul>
-            </div>
-          </Section>
-
         </div>
       </div>
     </div>

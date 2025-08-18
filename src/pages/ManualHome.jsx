@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { BookOpen, Calculator, Users, ArrowRight, Settings } from 'lucide-react';
+import { BookOpen, Calculator, Users, ArrowRight } from 'lucide-react';
 
 const ManualHome = () => {
   const modules = [
@@ -29,14 +29,7 @@ const ManualHome = () => {
       path: '/rrhh',
       color: '#8b5cf6'
     },
-    {
-      id: 'tecnica',
-      title: 'Documentación Técnica',
-      description: 'Información técnica detallada sobre la implementación y configuración del sistema.',
-      icon: Settings,
-      path: '/documentacion-tecnica',
-      color: '#f59e0b'
-    }
+
   ];
 
   return (

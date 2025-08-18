@@ -5,9 +5,7 @@ import ManualHome from './pages/ManualHome';
 import Nomina from './pages/Nomina';
 import Contabilidad from './pages/Contabilidad';
 import RRHH from './pages/RRHH';
-import DocumentacionTecnica from './pages/DocumentacionTecnica';
-import TerminosUso from './pages/TerminosUso';
-import PoliticaPrivacidad from './pages/PoliticaPrivacidad';
+import SearchTest from './components/SearchTest';
 
 function App() {
   return (
@@ -19,10 +17,8 @@ function App() {
             <Route path="nomina" element={<Nomina />} />
             <Route path="contabilidad" element={<Contabilidad />} />
             <Route path="rrhh" element={<RRHH />} />
-            <Route path="documentacion-tecnica" element={<DocumentacionTecnica />} />
-            <Route path="terminos-uso" element={<TerminosUso />} />
-            <Route path="politica-privacidad" element={<PoliticaPrivacidad />} />
           </Route>
+          <Route path="/test-search" element={<SearchTest />} />
         </Routes>
       </div>
     </Router>

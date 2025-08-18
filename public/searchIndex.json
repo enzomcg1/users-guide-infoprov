@@ -1,0 +1,156 @@
+[
+  {
+    "id": "nomina-generalidades",
+    "module": "nomina",
+    "moduleName": "Módulo de Nómina",
+    "type": "Sección",
+    "title": "Generalidades del Sistema",
+    "content": "El módulo de Nómina del ERP Avanza es un sistema integral que permite la gestión completa del ciclo de vida del empleado, desde su contratación hasta la liquidación final, incluyendo el cálculo automático de salarios, prestaciones sociales y reportes legales.",
+    "path": "/nomina",
+    "sectionId": "generalidades",
+    "icon": "Calculator"
+  },
+  {
+    "id": "nomina-configuracion",
+    "module": "nomina",
+    "moduleName": "Módulo de Nómina",
+    "type": "Sección",
+    "title": "Configuración de Nómina",
+    "content": "La configuración del módulo de nómina permite definir todos los parámetros necesarios para el correcto funcionamiento del sistema, incluyendo períodos de pago, tipos de contrato, convenios laborales y deducciones.",
+    "path": "/nomina",
+    "sectionId": "configuracion",
+    "icon": "Calculator"
+  },
+  {
+    "id": "nomina-procesos",
+    "module": "nomina",
+    "moduleName": "Módulo de Nómina",
+    "type": "Sección",
+    "title": "Procesos de Cálculo de Nómina",
+    "content": "El proceso de generación de nómina es completamente automatizado y sigue un flujo estandarizado para garantizar la precisión en los cálculos, incluyendo selección de período, inclusión automática de empleados y aplicación de conceptos.",
+    "path": "/nomina",
+    "sectionId": "procesos-calculo",
+    "icon": "Calculator"
+  },
+  {
+    "id": "nomina-reportes",
+    "module": "nomina",
+    "moduleName": "Módulo de Nómina",
+    "type": "Sección",
+    "title": "Reportes y Consultas",
+    "content": "El módulo de nómina genera una amplia variedad de reportes para satisfacer las necesidades de la empresa y los requerimientos legales, incluyendo recibos de sueldo, resúmenes generales y reportes de aportes patronales.",
+    "path": "/nomina",
+    "sectionId": "reportes-consultas",
+    "icon": "Calculator"
+  },
+  {
+    "id": "nomina-integracion",
+    "module": "nomina",
+    "moduleName": "Módulo de Nómina",
+    "type": "Sección",
+    "title": "Integración con Contabilidad",
+    "content": "El módulo de nómina está completamente integrado con el sistema contable, permitiendo la generación automática de asientos contables y la asociación de conceptos de nómina a cuentas contables específicas.",
+    "path": "/nomina",
+    "sectionId": "integracion",
+    "icon": "Calculator"
+  },
+  {
+    "id": "contabilidad-proceso",
+    "module": "contabilidad",
+    "moduleName": "Módulo de Contabilidad",
+    "type": "Sección",
+    "title": "Proceso de Contabilización de Operaciones",
+    "content": "Avanza ERP cuenta con un Motor de Generación de Sub-diario de Asientos Contables cuya función es generar los sub-diarios de asientos de las operaciones de los distintos módulos sujetas a contabilización.",
+    "path": "/contabilidad",
+    "sectionId": "proceso-contabilizacion",
+    "icon": "BookOpen"
+  },
+  {
+    "id": "contabilidad-cuentas",
+    "module": "contabilidad",
+    "moduleName": "Módulo de Contabilidad",
+    "type": "Sección",
+    "title": "Creación de Cuentas Contables",
+    "content": "Avanza ERP dispone de un asistente para la creación de cuentas contables utilizando una plantilla que define los segmentos del número de cuenta, permitiendo crear cuentas como hermana o hija de una cuenta existente.",
+    "path": "/contabilidad",
+    "sectionId": "creacion-cuentas",
+    "icon": "BookOpen"
+  },
+  {
+    "id": "contabilidad-periodos",
+    "module": "contabilidad",
+    "moduleName": "Módulo de Contabilidad",
+    "type": "Sección",
+    "title": "Administración de Períodos Contables",
+    "content": "Avanza ERP permite determinar el marco de tiempo para la gestión contable y administrativa, organizándolo en ejercicios y periodos contables con estados NUNCA ABIERTO, ABIERTO y CERRADO.",
+    "path": "/contabilidad",
+    "sectionId": "periodos-contables",
+    "icon": "BookOpen"
+  },
+  {
+    "id": "contabilidad-plantillas",
+    "module": "contabilidad",
+    "moduleName": "Módulo de Contabilidad",
+    "type": "Sección",
+    "title": "Plantillas de Asientos Contables",
+    "content": "Las plantillas de asientos definen la estructura contable para diferentes tipos de operaciones del sistema, organizadas por grupos funcionales como ANTICIPOS, COBRANZAS, COMPRAS, VENTAS y PAGOS.",
+    "path": "/contabilidad",
+    "sectionId": "plantillas-asientos",
+    "icon": "BookOpen"
+  },
+  {
+    "id": "rrhh-asignacion",
+    "module": "rrhh",
+    "moduleName": "Módulo de RRHH",
+    "type": "Sección",
+    "title": "Asignación de Valores de Empleados",
+    "content": "El módulo de Asignación de Valores de Empleados forma parte del sistema NÓMINAS de Avanza ERP y permite gestionar de manera eficiente los valores salariales y compensaciones de los empleados de la organización.",
+    "path": "/rrhh",
+    "sectionId": "asignacion-valores",
+    "icon": "Users"
+  },
+  {
+    "id": "rrhh-valores",
+    "module": "rrhh",
+    "moduleName": "Módulo de RRHH",
+    "type": "Sección",
+    "title": "Valores por Empleado",
+    "content": "La pantalla principal muestra información detallada de cada empleado incluyendo sucursal, departamento, sección, tipo valor, empleado, nombre completo, fechas de vigencia, documento, estado activo, salario base y estado.",
+    "path": "/rrhh",
+    "sectionId": "valores-empleado",
+    "icon": "Users"
+  },
+  {
+    "id": "rrhh-asignacion-masiva",
+    "module": "rrhh",
+    "moduleName": "Módulo de RRHH",
+    "type": "Sección",
+    "title": "Asignación Masiva de Valores de Empleado",
+    "content": "La funcionalidad de asignación masiva permite agregar o modificar registros de manera masiva, actualizando múltiples empleados simultáneamente con campos como sucursal, departamento, sección, valor actual, tipo valor, valor a aplicar y fecha de vigencia.",
+    "path": "/rrhh",
+    "sectionId": "asignacion-masiva",
+    "icon": "Users"
+  },
+  {
+    "id": "rrhh-filtros",
+    "module": "rrhh",
+    "moduleName": "Módulo de RRHH",
+    "type": "Sección",
+    "title": "Filtros del Sistema y su Propósito",
+    "content": "El sistema de asignación masiva incluye filtros específicos que permiten identificar y seleccionar de manera precisa los empleados que serán afectados por los cambios, organizados en filtros de ubicación, valor y tiempo.",
+    "path": "/rrhh",
+    "sectionId": "filtros-sistema",
+    "icon": "Users"
+  },
+  {
+    "id": "rrhh-proceso",
+    "module": "rrhh",
+    "moduleName": "Módulo de RRHH",
+    "type": "Sección",
+    "title": "Proceso de Asignación de Valores",
+    "content": "El proceso de asignación de valores de empleados sigue un flujo estructurado que garantiza la precisión y consistencia de los cambios salariales, incluyendo 8 pasos desde el acceso al sistema hasta la verificación de resultados.",
+    "path": "/rrhh",
+    "sectionId": "proceso-asignacion",
+    "icon": "Users"
+  }
+]
